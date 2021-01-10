@@ -1,17 +1,157 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>'member</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <div class="game-title">
+    <h1>'member</h1>
+    <div id="message" class="account-message"></div>
+  </div>
+
+  <div class="unauthenticated">
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+      Sign Up
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="sign-up">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <br />
+                <input type="text" name="credentials[email]" />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <br />
+                <input type="password" name="credentials[password]" />
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <br />
+                <input type="password" name="credentials[password_confirmation]" />
+              </div>
+              <p class="modal-message"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+      Sign In
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="sign-in">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <br />
+                <input type="text" name="credentials[email]" />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <br />
+                <input type="password" name="credentials[password]" />
+              </div>
+              <p class="modal-message"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Sign In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="authenticated">
+
+    <div class="authButtons">
+      <!-- Button trigger modal -->
+      <button id="change-pw" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+        Change Password
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="change-password">
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="old-password">Old Password</label>
+                  <br />
+                  <input type="password" name="passwords[old]" />
+                </div>
+                <div class="form-group">
+                  <label for="new-password">New Password</label>
+                  <br />
+                  <input type="password" name="passwords[new]" />
+                </div>
+                <p class="modal-message"></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Change Password</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <button id="sign-out" class="btn btn-primary" type="submit">Sign Out</button>
+
+    </div>
+
+  </div>
+
+</body>
+
 </html>
