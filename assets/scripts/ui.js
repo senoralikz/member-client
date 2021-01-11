@@ -38,6 +38,8 @@ const onSignOutSuccess = function () {
 
   store.user = null
 
+  $('#display-games').html('')
+
   $('.unauthenticated').show()
   $('.authenticated').hide()
 }
@@ -51,7 +53,36 @@ const onNewTaskSuccess = function () {
 }
 
 const onShowTasksSuccess = function (response) {
-  $('#display-games').html(response.task.length)
+  const tasks = response.tasks
+
+  let tasksHTML = ''
+
+  tasks.forEach(currentTask => {
+    const currentTaskHTML = (`
+      <h4>Task: ${currentTask.task}</h4>
+      <p>Due Date: ${currentTask.dueDate}</p>
+      <p>Task ID: ${currentTask._id}</p>
+      `)
+
+    tasksHTML += currentTaskHTML
+  })
+  $('#display-games').html(tasksHTML)
+}
+
+const onUpdateTaskSuccess = function () {
+  $('#message').html('<p>Successfully Updated Task!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
+  $('#edit-task').trigger('reset')
+  $('#editTaskModal').modal('hide')
+}
+
+const onDeleteTaskSuccess = function () {
+  $('#message').html('<p>Successfully Deleted Task!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
+  $('#delete-task').trigger('reset')
+  $('#deleteTaskModal').modal('hide')
 }
 
 const onFailure = function (error) {
@@ -73,6 +104,8 @@ module.exports = {
   onSignOutSuccess,
   onNewTaskSuccess,
   onShowTasksSuccess,
+  onUpdateTaskSuccess,
+  onDeleteTaskSuccess,
   onFailure,
   onModalFailure
 }

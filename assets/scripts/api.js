@@ -61,11 +61,34 @@ const showTasks = function () {
   })
 }
 
+const updateTask = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/tasks/' + formData.task.id,
+    method: 'PATCH',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const deleteTask = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/tasks/' + formData.task.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   newTask,
-  showTasks
+  showTasks,
+  updateTask,
+  deleteTask
 }

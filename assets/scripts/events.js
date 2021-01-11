@@ -66,11 +66,45 @@ const onShowTasks = function (event) {
     .catch(ui.onFailure)
 }
 
+const onUpdateTask = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+
+  const data = getFormFields(form)
+
+  if (data.task.id.length !== 0) {
+    api.updateTask(data)
+      .then(ui.onUpdateTaskSuccess)
+      .catch(ui.onModalFailure)
+  } else {
+    $('.modal-message').text('Please provide a task id!')
+  }
+}
+
+const onDeleteTask = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+
+  const data = getFormFields(form)
+
+  if (data.task.id.length !== 0) {
+    api.deleteTask(data)
+      .then(ui.onDeleteTaskSuccess)
+      .catch(ui.onModalFailure)
+  } else {
+    $('.modal-message').text('Please provide a task id!')
+  }
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
   onNewTask,
-  onShowTasks
+  onShowTasks,
+  onUpdateTask,
+  onDeleteTask
 }

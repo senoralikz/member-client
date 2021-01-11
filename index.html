@@ -197,6 +197,82 @@
       <div id="display-games"></div>
     </div>
 
+    <!-- Button trigger modal -->
+    <button id="editTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTaskModal">
+      Edit Task
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="edit-task">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="task-id">Task ID</label>
+                <br />
+                <input type="text" name="task[id]" />
+              </div>
+              <div class="form-group">
+                <label for="task">Task</label>
+                <br />
+                <input type="text" name="task[task]" />
+              </div>
+              <div class="form-group">
+                <label for="due-date">Due Date</label>
+                <br />
+                <input type="text" name="task[dueDate]" />
+              </div>
+              <p class="modal-message"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Update Task</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button id="deleteTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteTaskModal">
+      Delete Task
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="delete-task">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="task-id">Task ID</label>
+                <br />
+                <input type="text" name="task[id]" />
+              </div>
+              <p class="modal-message"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Delete Task</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </body>
