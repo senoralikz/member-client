@@ -42,6 +42,18 @@ const onSignOutSuccess = function () {
   $('.authenticated').hide()
 }
 
+const onNewTaskSuccess = function () {
+  $('#message').html('<p>Successfully Added Task!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
+  $('#new-task').trigger('reset')
+  $('#addNewTaskModal').modal('hide')
+}
+
+const onShowTasksSuccess = function (response) {
+  $('#display-games').html(response.task.length)
+}
+
 const onFailure = function (error) {
   $('#message').text('Failed with error: ' + error.responseJSON.message)
   $('#message').fadeIn()
@@ -59,6 +71,8 @@ module.exports = {
   onSignInSuccess,
   onChangePasswordSuccess,
   onSignOutSuccess,
+  onNewTaskSuccess,
+  onShowTasksSuccess,
   onFailure,
   onModalFailure
 }

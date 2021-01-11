@@ -108,6 +108,47 @@
   <div class="authenticated">
 
     <div class="authButtons">
+
+      <!-- Button trigger modal -->
+      <button id="add-task" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewTaskModal">
+        Add New Task
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="addNewTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Enter Task Info</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="new-task">
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="task">Task</label>
+                  <br />
+                  <input type="text" name="task[task]" />
+                </div>
+                <div class="form-group">
+                  <label for="due-date">Due Date</label>
+                  <br />
+                  <input type="text" name="task[dueDate]" />
+                </div>
+                <p class="modal-message"></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <button id="index-tasks" class="btn btn-primary" type="submit">View Tasks</button>
+
       <!-- Button trigger modal -->
       <button id="change-pw" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
         Change Password
@@ -148,6 +189,12 @@
 
       <button id="sign-out" class="btn btn-primary" type="submit">Sign Out</button>
 
+    </div>
+
+    <div class="game-message">
+      <div id="user-turn"></div>
+      <div id="move-message"></div>
+      <div id="display-games"></div>
     </div>
 
   </div>

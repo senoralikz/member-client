@@ -46,9 +46,31 @@ const onSignOut = function (event) {
     .catch(ui.onFailure)
 }
 
+const onNewTask = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+
+  const data = getFormFields(form)
+
+  api.newTask(data)
+    .then(ui.onNewTaskSuccess)
+    .catch(ui.onModalFailure)
+}
+
+const onShowTasks = function (event) {
+  event.preventDefault()
+
+  api.showTasks()
+    .then(ui.onShowTasksSuccess)
+    .catch(ui.onFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onNewTask,
+  onShowTasks
 }

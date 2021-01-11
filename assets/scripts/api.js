@@ -40,9 +40,32 @@ const signOut = function () {
   })
 }
 
+const newTask = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/tasks',
+    method: 'POST',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const showTasks = function () {
+  return $.ajax({
+    url: config.apiUrl + '/tasks',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  newTask,
+  showTasks
 }
