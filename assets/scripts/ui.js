@@ -38,7 +38,7 @@ const onSignOutSuccess = function () {
 
   store.user = null
 
-  $('#display-games').html('')
+  $('#display-tasks').html('')
 
   $('.unauthenticated').show()
   $('.authenticated').hide()
@@ -66,7 +66,7 @@ const onShowTasksSuccess = function (response) {
 
     tasksHTML += currentTaskHTML
   })
-  $('#display-games').html(tasksHTML)
+  $('#display-tasks').html(tasksHTML)
 }
 
 const onUpdateTaskSuccess = function () {
