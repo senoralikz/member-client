@@ -50,5 +50,5 @@ The application also uses ExpressAPI. Below are requests I made to ensure the AP
 4. As a user I would like to see what tasks are past their due date.
 5. As a user I would not want another user to have access to my tasks.
 
-## ERD
+### ERD
 ![Imgur](https://i.imgur.com/xxKA7VJ.png "ERD for Fullstack Project")
