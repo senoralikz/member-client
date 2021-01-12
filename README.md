@@ -1,4 +1,4 @@
-# 'member
+# 'member-client
 
 ### Technologies Used
 - JavaScript
@@ -8,10 +8,6 @@
 - jQuery
 - AJAX
 - Shell
-- ExpressAPI
-- MongoDB
-- Mongoose
-- Passport
 
 ### Development Process
 The goal of the application is to be able to perform the following:
@@ -49,6 +45,3 @@ The application also uses ExpressAPI. Below are requests I made to ensure the AP
 3. As a user I would like to check off completed tasks.
 4. As a user I would like to see what tasks are past their due date.
 5. As a user I would not want another user to have access to my tasks.
-
-### ERD
-![Imgur](https://i.imgur.com/xxKA7VJ.png "ERD for Fullstack Project")
