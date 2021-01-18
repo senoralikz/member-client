@@ -45,3 +45,8 @@ The application also uses ExpressAPI. Below are requests I made to ensure the AP
 3. As a user I would like to check off completed tasks.
 4. As a user I would like to see what tasks are past their due date.
 5. As a user I would not want another user to have access to my tasks.
+
+### Link to Repo for API Side of App and Deployed Site of Client
+'member-api: https://github.com/senoralikz/member
+
+'member-client deployed site: https://senoralikz.github.io/member-client/
