@@ -1,6 +1,13 @@
 'use strict'
 
 const store = require('./store')
+const api = require('./api')
+
+const onShowTasks = function () {
+  api.showTasks()
+    .then(onShowTasksSuccess)
+    .catch(onFailure)
+}
 
 const onSignUpSuccess = function (response) {
   $('#message').html('<p>Signed Up Successfully!</p>')
@@ -53,10 +60,6 @@ const onNewTaskSuccess = function () {
 }
 
 const onShowTasksSuccess = function (response) {
-  $('#message').html('<p>Successfully Viewing Tasks!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
-
   const tasks = response.tasks
 
   let tasksHTML = ''
@@ -120,5 +123,6 @@ module.exports = {
   onUpdateTaskSuccess,
   onDeleteTaskSuccess,
   onFailure,
-  onModalFailure
+  onModalFailure,
+  onShowTasks
 }

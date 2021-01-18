@@ -4,14 +4,6 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../lib/get-form-fields.js')
 
-const onShowTasks = function (event) {
-  event.preventDefault()
-
-  api.showTasks()
-    .then(ui.onShowTasksSuccess)
-    .catch(ui.onFailure)
-}
-
 const onSignUp = function (event) {
   event.preventDefault()
 
@@ -32,6 +24,7 @@ const onSignIn = function (event) {
 
   api.signIn(data)
     .then(ui.onSignInSuccess)
+    .then(ui.onShowTasks)
     .catch(ui.onModalFailure)
 }
 
@@ -63,6 +56,7 @@ const onNewTask = function (event) {
 
   api.newTask(data)
     .then(ui.onNewTaskSuccess)
+    .then(ui.onShowTasks)
     .catch(ui.onModalFailure)
 }
 
@@ -76,6 +70,7 @@ const onUpdateTask = function (event) {
   if (data.task.id.length !== 0) {
     api.updateTask(data)
       .then(ui.onUpdateTaskSuccess)
+      .then(ui.onShowTasks)
       .catch(ui.onModalFailure)
   } else {
     $('.modal-message').text('Please provide a task id!')
@@ -92,6 +87,7 @@ const onDeleteTask = function (event) {
   if (data.task.id.length !== 0) {
     api.deleteTask(data)
       .then(ui.onDeleteTaskSuccess)
+      .then(ui.onShowTasks)
       .catch(ui.onModalFailure)
   } else {
     $('.modal-message').text('Please provide a task id!')
@@ -104,7 +100,6 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onNewTask,
-  onShowTasks,
   onUpdateTask,
   onDeleteTask
 }

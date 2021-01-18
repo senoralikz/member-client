@@ -21,8 +21,6 @@ $(() => {
 
   $('#new-task').on('submit', authEvents.onNewTask)
 
-  $('#index-tasks').on('click', authEvents.onShowTasks)
-
   $('#edit-task').on('submit', authEvents.onUpdateTask)
 
   $('#delete-task').on('submit', authEvents.onDeleteTask)
