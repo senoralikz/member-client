@@ -49,7 +49,7 @@ The application also uses ExpressAPI. Below are requests I made to ensure the AP
 4. As a user I would like to see what tasks are past their due date.
 5. As a user I would not want another user to have access to my tasks.
 
-### Link to Repo for API Side of App and Deployed Site of Client
+### Links to Repo for API Side of App and the Deployed Sites of Client and API
 'member-client deployed site:
 https://senoralikz.github.io/member-client/
 
