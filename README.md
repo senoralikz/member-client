@@ -1,5 +1,8 @@
 # 'member-client
 
+### Description
+'member is a to-do list. Create a user and add any tasks you would like with a due date. You will also be able to view, update or delete them as you like.
+
 ### Technologies Used
 - JavaScript
 - HTML
