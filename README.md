@@ -50,6 +50,11 @@ The application also uses ExpressAPI. Below are requests I made to ensure the AP
 5. As a user I would not want another user to have access to my tasks.
 
 ### Link to Repo for API Side of App and Deployed Site of Client
-'member-api: https://github.com/senoralikz/member
+'member-client deployed site:
+https://senoralikz.github.io/member-client/
 
-'member-client deployed site: https://senoralikz.github.io/member-client/
+'member-api:
+https://github.com/senoralikz/member
+
+'member-api deployed site:
+https://dashboard.heroku.com/apps/protected-brushlands-52398
