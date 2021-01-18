@@ -53,7 +53,7 @@ The application also uses ExpressAPI. Below are requests I made to ensure the AP
 'member-client deployed site:
 https://senoralikz.github.io/member-client/
 
-'member-api:
+'member-api repo:
 https://github.com/senoralikz/member
 
 'member-api deployed site:
