@@ -4,6 +4,14 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../lib/get-form-fields.js')
 
+const onShowTasks = function (event) {
+  event.preventDefault()
+
+  api.showTasks()
+    .then(ui.onShowTasksSuccess)
+    .catch(ui.onFailure)
+}
+
 const onSignUp = function (event) {
   event.preventDefault()
 
@@ -56,14 +64,6 @@ const onNewTask = function (event) {
   api.newTask(data)
     .then(ui.onNewTaskSuccess)
     .catch(ui.onModalFailure)
-}
-
-const onShowTasks = function (event) {
-  event.preventDefault()
-
-  api.showTasks()
-    .then(ui.onShowTasksSuccess)
-    .catch(ui.onFailure)
 }
 
 const onUpdateTask = function (event) {

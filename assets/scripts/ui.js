@@ -53,26 +53,38 @@ const onNewTaskSuccess = function () {
 }
 
 const onShowTasksSuccess = function (response) {
+  $('#message').html('<p>Successfully Viewing Tasks!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
+
   const tasks = response.tasks
 
   let tasksHTML = ''
 
-  tasks.forEach(currentTask => {
-    const currentTaskHTML = (`
+  if (tasks.length !== 0) {
+    tasks.forEach(currentTask => {
+      if (currentTask.dueDate === '') {
+        currentTask.dueDate = 'No due date'
+      }
+      const currentTaskHTML = (`
       <h4>Task: ${currentTask.task}</h4>
       <p>Due Date: ${currentTask.dueDate}</p>
       <p>Task ID: ${currentTask._id}</p>
       `)
 
-    tasksHTML += currentTaskHTML
-  })
-  $('#display-tasks').html(tasksHTML)
+      tasksHTML += currentTaskHTML
+    })
+    $('#display-tasks').html(tasksHTML)
+  } else {
+    $('#display-tasks').html('You currently have no tasks')
+  }
 }
 
 const onUpdateTaskSuccess = function () {
   $('#message').html('<p>Successfully Updated Task!</p>')
   $('#message').fadeIn()
   $('#message').delay(2000).fadeOut('slow')
+  $('.modal-message').text('')
   $('#edit-task').trigger('reset')
   $('#editTaskModal').modal('hide')
 }
@@ -81,6 +93,7 @@ const onDeleteTaskSuccess = function () {
   $('#message').html('<p>Successfully Deleted Task!</p>')
   $('#message').fadeIn()
   $('#message').delay(2000).fadeOut('slow')
+  $('.modal-message').text('')
   $('#delete-task').trigger('reset')
   $('#deleteTaskModal').modal('hide')
 }
