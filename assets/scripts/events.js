@@ -74,7 +74,17 @@ const onUpdateTask = function (event) {
       .catch(ui.onModalFailure)
   } else {
     $('.modal-message').text('Please provide a task id!')
+    $('.modal-message').fadeIn()
+    $('.modal-message').delay(2000).fadeOut('slow')
   }
+}
+
+const onUpdateComplete = function (event) {
+  event.preventDefault()
+
+  api.updateComplete()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onFailure)
 }
 
 const onDeleteTask = function (event) {
@@ -91,6 +101,8 @@ const onDeleteTask = function (event) {
       .catch(ui.onModalFailure)
   } else {
     $('.modal-message').text('Please provide a task id!')
+    $('.modal-message').fadeIn()
+    $('.modal-message').delay(2000).fadeOut('slow')
   }
 }
 
@@ -101,5 +113,6 @@ module.exports = {
   onSignOut,
   onNewTask,
   onUpdateTask,
+  onUpdateComplete,
   onDeleteTask
 }

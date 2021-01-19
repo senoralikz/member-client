@@ -24,4 +24,6 @@ $(() => {
   $('#edit-task').on('submit', authEvents.onUpdateTask)
 
   $('#delete-task').on('submit', authEvents.onDeleteTask)
+
+  $('#is-complete').on('submit', authEvents.onUpdateComplete)
 })

@@ -60,6 +60,10 @@ const onNewTaskSuccess = function () {
 }
 
 const onShowTasksSuccess = function (response) {
+  $('#message2').html('<p>Successfully Viewing Tasks!</p>')
+  $('#message2').fadeIn()
+  $('#message2').delay(2000).fadeOut('slow')
+
   const tasks = response.tasks
 
   let tasksHTML = ''
@@ -69,11 +73,27 @@ const onShowTasksSuccess = function (response) {
       if (currentTask.dueDate === '') {
         currentTask.dueDate = 'No due date'
       }
+
       const currentTaskHTML = (`
-      <h4>Task: ${currentTask.task}</h4>
-      <p>Due Date: ${currentTask.dueDate}</p>
-      <p>Task ID: ${currentTask._id}</p>
-      `)
+          <div id="tasks">
+          <h4>task: ${currentTask.task}</h4>
+          <p>due date: ${currentTask.dueDate}</p>
+          <p>task id: ${currentTask._id}</p>
+          <p>done: ${currentTask.isComplete}</p>
+          <div id="task-options">
+          <button id="editTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTaskModal">
+            Edit Task
+          </button>
+          <button id="deleteTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteTaskModal">
+            Delete Task
+          </button>
+          <form>
+          <input type="checkbox" id="is-complete" name="task[isComplete]">
+          <label for="is-complete">Done</label>
+          </form>
+          </div>
+          </div>
+          `)
 
       tasksHTML += currentTaskHTML
     })
@@ -87,7 +107,6 @@ const onUpdateTaskSuccess = function () {
   $('#message').html('<p>Successfully Updated Task!</p>')
   $('#message').fadeIn()
   $('#message').delay(2000).fadeOut('slow')
-  $('.modal-message').text('')
   $('#edit-task').trigger('reset')
   $('#editTaskModal').modal('hide')
 }
@@ -96,7 +115,6 @@ const onDeleteTaskSuccess = function () {
   $('#message').html('<p>Successfully Deleted Task!</p>')
   $('#message').fadeIn()
   $('#message').delay(2000).fadeOut('slow')
-  $('.modal-message').text('')
   $('#delete-task').trigger('reset')
   $('#deleteTaskModal').modal('hide')
 }
