@@ -25,5 +25,5 @@ $(() => {
 
   $('#delete-task').on('submit', authEvents.onDeleteTask)
 
-  $('#is-complete').on('submit', authEvents.onUpdateComplete)
+  $('#is-complete').on('click', authEvents.onUpdateComplete)
 })

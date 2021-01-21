@@ -75,22 +75,19 @@ const onShowTasksSuccess = function (response) {
       }
 
       const currentTaskHTML = (`
-          <div id="tasks">
+          <div class="tasks">
+          <div>
           <h4>task: ${currentTask.task}</h4>
           <p>due date: ${currentTask.dueDate}</p>
           <p>task id: ${currentTask._id}</p>
-          <p>done: ${currentTask.isComplete}</p>
-          <div id="task-options">
-          <button id="editTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTaskModal">
-            Edit Task
-          </button>
-          <button id="deleteTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteTaskModal">
+          </div>
+          <div>
+          <button id="deleteTask" type="button" class="btn btn-primary task-options" data-toggle="modal" data-target="#deleteTaskModal">
             Delete Task
           </button>
-          <form>
-          <input type="checkbox" id="is-complete" name="task[isComplete]">
-          <label for="is-complete">Done</label>
-          </form>
+          <button id="editTask" type="button" class="btn btn-primary task-options" data-toggle="modal" data-target="#editTaskModal">
+            Edit Task
+          </button>
           </div>
           </div>
           `)
@@ -98,6 +95,7 @@ const onShowTasksSuccess = function (response) {
       tasksHTML += currentTaskHTML
     })
     $('#display-tasks').html(tasksHTML)
+    // $('.task-options').hide()
   } else {
     $('#display-tasks').html('You currently have no tasks')
   }
@@ -109,6 +107,12 @@ const onUpdateTaskSuccess = function () {
   $('#message').delay(2000).fadeOut('slow')
   $('#edit-task').trigger('reset')
   $('#editTaskModal').modal('hide')
+}
+
+const onUpdateCompleteSuccess = function () {
+  $('#message').html('<p>Successfully Completed Task!</p>')
+  $('#message').fadeIn()
+  $('#message').delay(2000).fadeOut('slow')
 }
 
 const onDeleteTaskSuccess = function () {
@@ -139,6 +143,7 @@ module.exports = {
   onNewTaskSuccess,
   onShowTasksSuccess,
   onUpdateTaskSuccess,
+  onUpdateCompleteSuccess,
   onDeleteTaskSuccess,
   onFailure,
   onModalFailure,

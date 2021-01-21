@@ -83,7 +83,8 @@ const onUpdateComplete = function (event) {
   event.preventDefault()
 
   api.updateComplete()
-    .then(ui.onSignOutSuccess)
+    .then(ui.onUpdateCompleteSuccess)
+    .then(ui.onShowTasks)
     .catch(ui.onFailure)
 }
 

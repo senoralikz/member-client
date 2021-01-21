@@ -5,3 +5,25 @@
 body {
   font-family: $magic;
 }
+
+header {
+  background: green;
+  display: flex;
+}
+
+.tasks {
+  display: flex;
+}
+
+.task-options {
+  display: none;
+}
+
+.tasks:hover {
+
+  .task-options {
+    display: inline;
+    float: right;
+  }
+
+}
