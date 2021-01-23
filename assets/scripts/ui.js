@@ -137,7 +137,6 @@ module.exports = {
   onNewTaskSuccess,
   onShowTasksSuccess,
   onUpdateTaskSuccess,
-  onUpdateCompleteSuccess,
   onDeleteTaskSuccess,
   onFailure,
   onModalFailure,
