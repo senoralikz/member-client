@@ -72,17 +72,6 @@ const updateTask = function (formData) {
   })
 }
 
-const updateComplete = function (formData) {
-  return $.ajax({
-    url: config.apiUrl + '/tasks/' + formData.task.id,
-    method: 'PATCH',
-    data: formData,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
 const deleteTask = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/tasks/' + formData.task.id,
@@ -101,6 +90,5 @@ module.exports = {
   newTask,
   showTasks,
   updateTask,
-  updateComplete,
   deleteTask
 }

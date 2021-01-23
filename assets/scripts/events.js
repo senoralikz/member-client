@@ -79,15 +79,6 @@ const onUpdateTask = function (event) {
   }
 }
 
-const onUpdateComplete = function (event) {
-  event.preventDefault()
-
-  api.updateComplete()
-    .then(ui.onUpdateCompleteSuccess)
-    .then(ui.onShowTasks)
-    .catch(ui.onFailure)
-}
-
 const onDeleteTask = function (event) {
   event.preventDefault()
 
@@ -114,6 +105,5 @@ module.exports = {
   onSignOut,
   onNewTask,
   onUpdateTask,
-  onUpdateComplete,
   onDeleteTask
 }

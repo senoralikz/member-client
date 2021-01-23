@@ -109,12 +109,6 @@ const onUpdateTaskSuccess = function () {
   $('#editTaskModal').modal('hide')
 }
 
-const onUpdateCompleteSuccess = function () {
-  $('#message').html('<p>Successfully Completed Task!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
-}
-
 const onDeleteTaskSuccess = function () {
   $('#message').html('<p>Successfully Deleted Task!</p>')
   $('#message').fadeIn()

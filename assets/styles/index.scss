@@ -7,8 +7,36 @@ body {
 }
 
 header {
-  background: green;
+  background: $header-color;
+}
+
+.account-message {
+  margin-left: 10px;
+  align-items: flex-end;
+}
+
+.btn-primary {
+  margin: 8px;
+}
+
+.displayTasks {
+  margin-top: 10px;
+}
+
+.unauthButtons {
   display: flex;
+  justify-content: flex-end;
+}
+
+.authButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.game-title {
+  color: $app-color;
+  display: flex;
+  align-items: flex-end;
 }
 
 .tasks {
@@ -22,7 +50,7 @@ header {
 .tasks:hover {
 
   .task-options {
-    display: inline;
+    display: flex;
     float: right;
   }
 
