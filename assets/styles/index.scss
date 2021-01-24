@@ -4,11 +4,20 @@
 
 body {
   font-family: $magic;
+  background: $header-color;
+  color: $app-color;
 }
 
-header {
-  background: $header-color;
+hr {
+  width: 50%;
+  text-align: left;
+  margin-left: 0;
+  background: $app-color;
 }
+
+// header {
+//   background: $header-color;
+// }
 
 .account-message {
   margin-left: 10px;
@@ -17,6 +26,8 @@ header {
 
 .btn-primary {
   margin: 8px;
+  background: $app-color;
+  color: $header-color;
 }
 
 .displayTasks {
@@ -34,9 +45,19 @@ header {
 }
 
 .game-title {
-  color: $app-color;
+  // color: $app-color;
   display: flex;
   align-items: flex-end;
+  margin-left: 10px;
+}
+
+.modalButtons {
+  background: $header-color;
+  color: $app-color;
+}
+
+.modal-label, .modal-message, .modal-title {
+  color: $header-color;
 }
 
 .tasks {

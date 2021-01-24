@@ -23,6 +23,8 @@
 
     <div class="unauthenticated">
 
+
+
       <div class="unauthButtons">
 
         <!-- Button trigger modal for Sign Up -->
@@ -43,25 +45,25 @@
               <form id="sign-up">
                 <div class="modal-body">
                   <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email" class="modal-label">Email</label>
                     <br />
                     <input type="text" name="credentials[email]" />
                   </div>
                   <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password" class="modal-label">Password</label>
                     <br />
                     <input type="password" name="credentials[password]" />
                   </div>
                   <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
+                    <label for="confirm-password" class="modal-label">Confirm Password</label>
                     <br />
                     <input type="password" name="credentials[password_confirmation]" />
                   </div>
                   <p class="modal-message"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Sign Up</button>
+                  <button type="button" class="btn btn-primary modalButtons " data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Sign Up</button>
                 </div>
               </form>
             </div>
@@ -86,20 +88,20 @@
               <form id="sign-in">
                 <div class="modal-body">
                   <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email" class="modal-label">Email</label>
                     <br />
                     <input type="text" name="credentials[email]" />
                   </div>
                   <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password" class="modal-label">Password</label>
                     <br />
                     <input type="password" name="credentials[password]" />
                   </div>
                   <p class="modal-message"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Sign In</button>
+                  <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Sign In</button>
                 </div>
               </form>
             </div>
@@ -132,20 +134,20 @@
               <form id="new-task">
                 <div class="modal-body">
                   <div class="form-group">
-                    <label for="task">Task</label>
+                    <label for="task" class="modal-label">Task</label>
                     <br />
                     <input type="text" name="task[task]" />
                   </div>
                   <div class="form-group">
-                    <label for="due-date">Due Date</label>
+                    <label for="due-date" class="modal-label">Due Date</label>
                     <br />
                     <input type="text" name="task[dueDate]" />
                   </div>
                   <p class="modal-message"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Submit</button>
                 </div>
               </form>
             </div>
@@ -170,20 +172,20 @@
               <form id="change-password">
                 <div class="modal-body">
                   <div class="form-group">
-                    <label for="old-password">Old Password</label>
+                    <label for="old-password" class="modal-label">Old Password</label>
                     <br />
                     <input type="password" name="passwords[old]" />
                   </div>
                   <div class="form-group">
-                    <label for="new-password">New Password</label>
+                    <label for="new-password" class="modal-label">New Password</label>
                     <br />
                     <input type="password" name="passwords[new]" />
                   </div>
                   <p class="modal-message"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Change Password</button>
+                  <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Change Password</button>
                 </div>
               </form>
             </div>
@@ -222,25 +224,25 @@
         <form id="edit-task">
           <div class="modal-body">
             <div class="form-group">
-              <label for="task-id">Task ID</label>
+              <label for="task-id" class="modal-label">Task ID</label>
               <br />
               <input type="text" name="task[id]" />
             </div>
             <div class="form-group">
-              <label for="task">Task</label>
+              <label for="task" class="modal-label">Task</label>
               <br />
               <input type="text" name="task[task]" />
             </div>
             <div class="form-group">
-              <label for="due-date">Due Date</label>
+              <label for="due-date" class="modal-label">Due Date</label>
               <br />
               <input type="text" name="task[dueDate]" />
             </div>
             <p class="modal-message"></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Update Task</button>
+            <button type="button" class="btn btn-primary modalButtons modalButtons" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary modalButtons modalButtons">Update Task</button>
           </div>
         </form>
       </div>
@@ -265,15 +267,15 @@
         <form id="delete-task">
           <div class="modal-body">
             <div class="form-group">
-              <label for="task-id">Task ID</label>
+              <label for="task-id" class="modal-label">Task ID</label>
               <br />
               <input type="text" name="task[id]" />
             </div>
             <p class="modal-message"></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Delete Task</button>
+            <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary modalButtons">Delete Task</button>
           </div>
         </form>
       </div>

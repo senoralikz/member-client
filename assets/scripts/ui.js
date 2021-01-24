@@ -90,6 +90,7 @@ const onShowTasksSuccess = function (response) {
           </button>
           </div>
           </div>
+          <hr>
           `)
 
       tasksHTML += currentTaskHTML
