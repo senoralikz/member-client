@@ -85,6 +85,8 @@ header {
 .tasks:hover {
 
   .task-options {
+    background: $background-color;
+    color: $app-color;
     display: flex;
     float: right;
   }
