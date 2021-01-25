@@ -10,17 +10,20 @@ const onShowTasks = function () {
 }
 
 const onSignUpSuccess = function (response) {
-  $('#message').html('<p>Signed Up Successfully!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').html('<p>Signed Up Successfully!</p>')
+  $('#successFailureMessage').html('<div class="card text-white bg-success"><div class="card-header">Success</div><div class="card-body"><p class="card-text">Successfully Signed Up.</p></div></div>')
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
   $('#sign-up').trigger('reset')
   $('#sign-up-modal').modal('hide')
 }
 
 const onSignInSuccess = function (response) {
-  $('#message').html('<p>Signed In Successfully!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').html('<p>Signed In Successfully!</p>')
+  // $('#successFailureMessage').html('<div class="alert alert-success" role="alert">Signed In Successfully!</div>')
+  $('#successFailureMessage').html('<div class="card text-white bg-success"><div class="card-header">Success</div><div class="card-body"><p class="card-text">Successfully Signed In!</p></div></div>')
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
   $('#sign-in').trigger('reset')
 
   store.user = response.user
@@ -31,17 +34,19 @@ const onSignInSuccess = function (response) {
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('#message').html('<p>Successfully Changed Password!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').html('<p>Successfully Changed Password!</p>')
+  $('#successFailureMessage').html('<div class="card text-white bg-success"><div class="card-header">Success</div><div class="card-body"><p class="card-text">Successfully Changed Password.</p></div></div>')
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
   $('#change-password').trigger('reset')
   $('#changePasswordModal').modal('hide')
 }
 
 const onSignOutSuccess = function () {
-  $('#message').html('<p>Signed Out Successfully!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').html('<p>Signed Out Successfully!</p>')
+  $('#successFailureMessage').html('<div class="card text-white bg-success"><div class="card-header">Success</div><div class="card-body"><p class="card-text">Successfully Signed Out.</p></div></div>')
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
 
   store.user = null
 
@@ -52,9 +57,10 @@ const onSignOutSuccess = function () {
 }
 
 const onNewTaskSuccess = function () {
-  $('#message').html('<p>Successfully Added Task!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').html('<p>Successfully Added Task!</p>')
+  $('#successFailureMessage').html('<div class="card text-white bg-success"><div class="card-header">Success</div><div class="card-body"><p class="card-text">Successfully Created New Task.</p></div></div>')
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
   $('#new-task').trigger('reset')
   $('#addNewTaskModal').modal('hide')
 }
@@ -103,25 +109,28 @@ const onShowTasksSuccess = function (response) {
 }
 
 const onUpdateTaskSuccess = function () {
-  $('#message').html('<p>Successfully Updated Task!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').html('<p>Successfully Updated Task!</p>')
+  $('#successFailureMessage').html('<div class="card text-white bg-success"><div class="card-header">Success</div><div class="card-body"><p class="card-text">Successfully Updated Task.</p></div></div>')
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
   $('#edit-task').trigger('reset')
   $('#editTaskModal').modal('hide')
 }
 
 const onDeleteTaskSuccess = function () {
-  $('#message').html('<p>Successfully Deleted Task!</p>')
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').html('<p>Successfully Deleted Task!</p>')
+  $('#successFailureMessage').html('<div class="card text-white bg-success"><div class="card-header">Success</div><div class="card-body"><p class="card-text">Successfully Deleted Task.</p></div></div>')
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
   $('#delete-task').trigger('reset')
   $('#deleteTaskModal').modal('hide')
 }
 
 const onFailure = function (error) {
-  $('#message').text('Failed with error: ' + error.responseJSON.message)
-  $('#message').fadeIn()
-  $('#message').delay(2000).fadeOut('slow')
+  // $('#message').text('Failed with error: ' + error.responseJSON.message)
+  $('#successFailureMessage').html(`<div class="card text-white bg-danger"><div class="card-header">Error</div><div class="card-body"><p class="card-text">Failed with error: ${error.responseJSON.message}</p></div></div>`)
+  $('#successFailureMessage').fadeIn()
+  $('#successFailureMessage').delay(2000).fadeOut('slow')
 }
 
 const onModalFailure = function (error) {
