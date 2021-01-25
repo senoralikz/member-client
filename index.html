@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>'member</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="headerFlex">
+    <div class="game-title">
+      <h1>'member</h1>
+      <div id="message" class="account-message"></div>
+      <div id="message2" class="account-message"></div>
+    </div>
+
+    <div class="unauthenticated">
+
+
+
+      <div class="unauthButtons">
+
+        <!-- Button trigger modal for Sign Up -->
+        <button id="signUp" type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+          Sign Up
+        </button>
+
+        <!-- Modal for Sign Up -->
+        <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form id="sign-up">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="email" class="modal-label">Email</label>
+                    <br />
+                    <input type="text" name="credentials[email]" />
+                  </div>
+                  <div class="form-group">
+                    <label for="password" class="modal-label">Password</label>
+                    <br />
+                    <input type="password" name="credentials[password]" />
+                  </div>
+                  <div class="form-group">
+                    <label for="confirm-password" class="modal-label">Confirm Password</label>
+                    <br />
+                    <input type="password" name="credentials[password_confirmation]" />
+                  </div>
+                  <p class="modal-message"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary modalButtons " data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Sign Up</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button trigger modal for Sign In -->
+        <button id="signIn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+          Sign In
+        </button>
+
+        <!-- Modal for Sign In -->
+        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form id="sign-in">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="email" class="modal-label">Email</label>
+                    <br />
+                    <input type="text" name="credentials[email]" />
+                  </div>
+                  <div class="form-group">
+                    <label for="password" class="modal-label">Password</label>
+                    <br />
+                    <input type="password" name="credentials[password]" />
+                  </div>
+                  <p class="modal-message"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Sign In</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="authenticated">
+
+      <div class="authButtons">
+
+        <!-- Button trigger modal for Add New Task -->
+        <button id="add-task" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewTaskModal">
+          Add New Task
+        </button>
+
+        <!-- Modal for Add New Task -->
+        <div class="modal fade" id="addNewTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enter Task Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form id="new-task">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="task" class="modal-label">Task</label>
+                    <br />
+                    <input type="text" name="task[task]" />
+                  </div>
+                  <div class="form-group">
+                    <label for="due-date" class="modal-label">Due Date</label>
+                    <br />
+                    <input type="text" name="task[dueDate]" />
+                  </div>
+                  <p class="modal-message"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button trigger modal for Change Password -->
+        <button id="change-pw" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+          Change Password
+        </button>
+
+        <!-- Modal for Change Password -->
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form id="change-password">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="old-password" class="modal-label">Old Password</label>
+                    <br />
+                    <input type="password" name="passwords[old]" />
+                  </div>
+                  <div class="form-group">
+                    <label for="new-password" class="modal-label">New Password</label>
+                    <br />
+                    <input type="password" name="passwords[new]" />
+                  </div>
+                  <p class="modal-message"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary modalButtons">Change Password</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button for Sign Out -->
+        <button id="sign-out" class="btn btn-primary" type="submit">Sign Out</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </header>
+
+  <div class="container">
+    <div id="display-tasks" class="displayTasks"></div>
+  </div>
+
+
+  <!-- Button trigger modal for Updating Task -->
+  <!-- <button id="editTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTaskModal">
+      Edit Task
+    </button> -->
+
+  <!-- Modal for Updating Task -->
+  <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="edit-task">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="task-id" class="modal-label">Task ID</label>
+              <br />
+              <input type="text" name="task[id]" />
+            </div>
+            <div class="form-group">
+              <label for="task" class="modal-label">Task</label>
+              <br />
+              <input type="text" name="task[task]" />
+            </div>
+            <div class="form-group">
+              <label for="due-date" class="modal-label">Due Date</label>
+              <br />
+              <input type="text" name="task[dueDate]" />
+            </div>
+            <p class="modal-message"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary modalButtons modalButtons" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary modalButtons modalButtons">Update Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal for Deleting Task -->
+  <!-- <button id="deleteTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteTaskModal">
+      Delete Task
+    </button> -->
+
+  <!-- Modal for Deleting Task -->
+  <div class="modal fade" id="deleteTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="delete-task">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="task-id" class="modal-label">Task ID</label>
+              <br />
+              <input type="text" name="task[id]" />
+            </div>
+            <p class="modal-message"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary modalButtons" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary modalButtons">Delete Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<footer>
+  <div id="successFailureMessage"></div>
+</footer>
+
+</body>
+
+</html>
