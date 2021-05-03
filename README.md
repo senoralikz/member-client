@@ -3,7 +3,7 @@
 ### Description
 
 'member is a to-do list. Create a user and add any tasks you would like with a due date. You will also be able to view, update or delete them as you like. To test the app use the credentials below:  
-EMAIL: test@testing
+EMAIL: test@testing  
 PASSWORD: 123456
 
 ### Technologies Used
